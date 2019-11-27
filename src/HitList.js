@@ -30,8 +30,11 @@ class Table extends React.Component {
 
   renderer = ({ hours, minutes, seconds, completed }) => {
     // Render a countdown
+
     if (this.val == 0) {
       return <span>00 Hours : 00 Minutes : 00 Seconds</span>;
+    } else if (completed) {
+      return <h1>Target Eliminated! HEADSHOT!!</h1>;
     } else {
       return (
         <div>
