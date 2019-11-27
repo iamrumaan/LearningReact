@@ -1,12 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import Table from "./HitList";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//Class Component
+class Dept extends React.Component {
+  deptElement;
+  tableElement;
+  constructor(props) {
+    super(props);
+  }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  render() {
+    this.deptElement = (
+      <div align="center" style={{ fontFamily: "Rockwell" }}>
+        <h1 style={{ color: "red" }}>Welcome to Hitman Network</h1>
+        <Table id="47" />
+      </div>
+    );
+    return this.deptElement;
+  }
+}
+
+//Function Component
+function Car() {
+  return <h2>Hi, I am also a Car!</h2>;
+}
+
+ReactDOM.render(<Dept />, document.getElementById("root"));
