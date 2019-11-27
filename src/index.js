@@ -12,7 +12,12 @@ class Dept extends React.Component {
 
   render() {
     this.deptElement = (
-      <div align="center" style={{ fontFamily: "Rockwell" }}>
+      <div
+        align="center"
+        style={{
+          fontFamily: "Rockwell"
+        }}
+      >
         <h1 style={{ color: "red" }}>Welcome to Hitman Network</h1>
         <Table id="47" />
       </div>

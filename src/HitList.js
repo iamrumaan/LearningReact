@@ -34,7 +34,7 @@ class Table extends React.Component {
     if (this.val == 0) {
       return <span>00 Hours : 00 Minutes : 00 Seconds</span>;
     } else if (completed) {
-      return <h1>Target Eliminated! HEADSHOT!!</h1>;
+      return <h1>Target Eliminated!HEADSHOTT!!</h1>;
     } else {
       return (
         <div>
