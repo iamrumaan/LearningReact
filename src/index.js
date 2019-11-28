@@ -15,10 +15,16 @@ class Dept extends React.Component {
       <div
         align="center"
         style={{
-          fontFamily: "Rockwell"
+          fontFamily: "Rockwell",
+          color: "white"
         }}
       >
-        <h1 style={{ color: "red" }}>Welcome to Hitman Network</h1>
+        <div class="" style={{ backgroundColor: "black", color: "white" }}>
+          <a class="" href="#home">
+            <h2 style={{ color: "white" }}>Welcome To Hitman Network</h2>
+          </a>
+        </div>
+        <br></br>
         <Table id="47" />
       </div>
     );

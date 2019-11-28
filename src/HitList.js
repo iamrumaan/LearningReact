@@ -32,13 +32,13 @@ class Table extends React.Component {
     // Render a countdown
 
     if (this.val == 0) {
-      return <span>00 Hours : 00 Minutes : 00 Seconds</span>;
+      return <span class="bg-active">00 Hours : 00 Minutes : 00 Seconds</span>;
     } else if (completed) {
-      return <h1>Target Eliminated!HEADSHOTT!!</h1>;
+      return <h1 class="bg-danger">Target Eliminated! HEADSHOTT!!</h1>;
     } else {
       return (
         <div>
-          <span>
+          <span class="bg-active">
             {hours} Hours : {minutes} Minutes : {seconds} Seconds
           </span>
           <br></br>
@@ -51,25 +51,29 @@ class Table extends React.Component {
   render() {
     this.myelement = (
       <div>
-        <h2 style={{ color: "red" }}>Hello Agent {this.props.id}</h2>
-        <table>
-          <tr>
+        <h2>
+          Hello <label style={{ color: "red" }}>Agent {this.props.id}</label>
+        </h2>
+        <br></br>
+        <h4>Target Details</h4>
+        <table style={{ color: "white" }} class="table table-borderless">
+          <tr style={{ textAlign: "right" }}>
             <td>
-              <strong>Target Name</strong>
+              <bold>Target Name</bold>
             </td>
-            <td style={{ color: "red" }}>John Abbot</td>
+            <td style={{ color: "red", textAlign: "left" }}>John Abbot</td>
           </tr>
-          <tr>
+          <tr style={{ textAlign: "right" }}>
             <td>
               <strong>Location</strong>
             </td>
-            <td style={{ color: "red" }}>Copenhagen</td>
+            <td style={{ color: "red", textAlign: "left" }}>Copenhagen</td>
           </tr>
-          <tr>
+          <tr style={{ textAlign: "right" }}>
             <td>
               <strong>Status</strong>
             </td>
-            <td>
+            <td style={{ textAlign: "left" }}>
               <div id="divStatus">
                 <label id="lblStatus" style={{ color: "red" }}>
                   {this.state.action}
@@ -79,17 +83,26 @@ class Table extends React.Component {
           </tr>
         </table>
         <div>
-          <form>
-            <h3>Time required to hunt in hours:</h3>
-            <input id="huntTime" type="number"></input>
-            &nbsp;
-            <button id="btnChange" type="button" onClick={this.changeStatus}>
+          <form class="form">
+            <label>Time required to hunt in hours:</label>
+            <input
+              id="huntTime"
+              type="text"
+              class="form-control col-sm-1"
+            ></input>
+            <br></br>
+            <button
+              id="btnChange"
+              type="button"
+              class="btn btn-danger sm-1"
+              onClick={this.changeStatus}
+            >
               <strong>Start The Hunt</strong>
             </button>
           </form>
         </div>
         &nbsp; &nbsp;
-        <div id="huntTimer" style={{ color: "red" }}>
+        <div id="huntTimer" style={{ color: "white" }}>
           <Countdown date={Date.now() + this.val} renderer={this.renderer} />
         </div>
       </div>
