@@ -20,9 +20,9 @@ class Dept extends React.Component {
         }}
       >
         <div class="" style={{ backgroundColor: "black", color: "white" }}>
-          <a class="" href="#home">
+          <span class="" href="#">
             <h2 style={{ color: "white" }}>Welcome To Hitman Network</h2>
-          </a>
+          </span>
         </div>
         <br></br>
         <Table id="47" />

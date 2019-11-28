@@ -32,13 +32,21 @@ class Table extends React.Component {
     // Render a countdown
 
     if (this.val == 0) {
-      return <span class="bg-active">00 Hours : 00 Minutes : 00 Seconds</span>;
+      return (
+        <span class="bg-danger" style={{ color: "white" }}>
+          00 Hours : 00 Minutes : 00 Seconds
+        </span>
+      );
     } else if (completed) {
-      return <h1 class="bg-danger">Target Eliminated! HEADSHOTT!!</h1>;
+      return (
+        <h1 class="bg-danger" style={{ color: "white" }}>
+          Target Eliminated! HEADSHOTT!!
+        </h1>
+      );
     } else {
       return (
         <div>
-          <span class="bg-active">
+          <span class="bg-danger" style={{ color: "white" }}>
             {hours} Hours : {minutes} Minutes : {seconds} Seconds
           </span>
           <br></br>
@@ -56,28 +64,35 @@ class Table extends React.Component {
         </h2>
         <br></br>
         <h4>Target Details</h4>
-        <table style={{ color: "white" }} class="table table-borderless">
+        <table
+          style={{ color: "white" }}
+          class="table table-sm table-borderless"
+        >
           <tr style={{ textAlign: "right" }}>
             <td>
-              <bold>Target Name</bold>
+              <label>Target Name</label>
             </td>
-            <td style={{ color: "red", textAlign: "left" }}>John Abbot</td>
+            <td style={{ color: "red", textAlign: "left" }}>
+              <bold>John Abbot</bold>
+            </td>
           </tr>
           <tr style={{ textAlign: "right" }}>
             <td>
-              <strong>Location</strong>
+              <label>Location</label>
             </td>
-            <td style={{ color: "red", textAlign: "left" }}>Copenhagen</td>
+            <td style={{ color: "red", textAlign: "left" }}>
+              <bold>Copenhagen</bold>
+            </td>
           </tr>
           <tr style={{ textAlign: "right" }}>
             <td>
-              <strong>Status</strong>
+              <label>Status</label>
             </td>
             <td style={{ textAlign: "left" }}>
               <div id="divStatus">
-                <label id="lblStatus" style={{ color: "red" }}>
+                <bold id="lblStatus" style={{ color: "red" }}>
                   {this.state.action}
-                </label>
+                </bold>
               </div>
             </td>
           </tr>
@@ -88,7 +103,7 @@ class Table extends React.Component {
             <input
               id="huntTime"
               type="text"
-              class="form-control col-sm-1"
+              class="form-control col-sm-2"
             ></input>
             <br></br>
             <button
